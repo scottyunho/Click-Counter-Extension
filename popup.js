@@ -1,20 +1,45 @@
 let counterDisplayElem = document.getElementById("counter-display");
 let counterMinusElem = document.getElementById("counter-minus");
 let counterPlusElem = document.getElementById("counter-plus");
+let count;
 
-let count = 0;
-updateDisplay();
 
+
+function updateDisplay(){
+    chrome.storage.sync.get(['counter'], function(result) {
+        console.log('Value currently is ' + result.counter);
+        count = result.counter;
+        counterDisplayElem.innerHTML = count;
+    });
+};
+
+
+//bootup
+document.addEventListener("DOMContentLoaded", ()=> {
+    chrome.storage.sync.get(['counter'], function(result) {
+        console.log('Value currently is ' + result.counter);
+        count = result.counter;
+        counterDisplayElem.innerHTML = count;
+    });
+});
+
+//if
 counterPlusElem.addEventListener("click",()=>{
     count++;
-    updateDisplay();
-}) ;
+    chrome.storage.sync.set({counter: count}, function() {
+        console.log('Value is set to ' + count);
+    });
 
-counterMinusElem.addEventListener("click",()=>{
-    count--;
     updateDisplay();
 });
 
-function updateDisplay(){
-    counterDisplayElem.innerHTML = `${count}`;
-};
+counterMinusElem.addEventListener("click",()=>{
+    count--;
+    chrome.storage.sync.set({counter: count}, function() {
+        console.log('Value is set to ' + count);
+    });
+    updateDisplay();
+});
+
+
+
