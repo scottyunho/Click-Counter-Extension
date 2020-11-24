@@ -10,6 +10,7 @@ chrome.runtime.onInstalled.addListener(function() {
   });
 });
 
+//chrome.browserAction.setIcon(ClickerIcon.png);
 
 
 
