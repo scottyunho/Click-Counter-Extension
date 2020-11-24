@@ -1,9 +1,8 @@
-let counterDisplayElem = document.querySelector('.counter-display');
-let counterMinusElem = document.querySelector('.counter-minus');
-let counterPlusElem = document.querySelector('.counter-plus');
+let counterDisplayElem = document.getElementById("counter-display");
+let counterMinusElem = document.getElementById("counter-minus");
+let counterPlusElem = document.getElementById("counter-plus");
 
 let count = 0;
-
 updateDisplay();
 
 counterPlusElem.addEventListener("click",()=>{
@@ -17,5 +16,5 @@ counterMinusElem.addEventListener("click",()=>{
 });
 
 function updateDisplay(){
-    counterDisplayElem.innerHTML = count;
+    counterDisplayElem.innerHTML = `${count}`;
 };

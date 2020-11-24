@@ -4,7 +4,6 @@
 
 'use strict';
 
-var counter = 0;
 chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({counter: 0}, function() {
     console.log("The color is green.");
