@@ -1,22 +1,22 @@
 body {
-    background-color: #dddddd;
+    background-color: #ebebeb;
   }
   h1 {
-    color: #707070;
+    color: #929292;
     text-align: center;
     font-size: 30px;  
   }
 
   p {
-    color: #707070;
+    color: #929292;
     text-align: center;
     font-weight:bold;
     font-size: 16px;  
   }
   
   button {
-    background-color: #707070;
-    color: #dddddd;
+    background-color: #929292;
+    color: #ebebeb;
     border: none;
     padding: 10px 10px;
     text-align: center;
